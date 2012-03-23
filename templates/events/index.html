@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block bodyclass %}index_{{index_format}}{% endblock %}
+
+{% block contentclass %}events-grid{% endblock %}
+
+{% block content %}
+
+{% if upcoming_events_list %}
+	{% if index_format = 'list' %}
+	<div class="grid_12 prefix_4">
+		{% for event in upcoming_events_list %}
+		<div class="event grid_4">
+			<h2><a href="/events/{{event.id}}/">{{event.name}}</a></h2>
+			<p class="date">{{event.start_date}}</p>
+			<p class="venue">{{event.venue}}</p>
+		</div>
+		{% endfor %}
+	</div>
+	{% endif %}
+	
+	{% if index_format = 'grid' %}
+	{% for event in upcoming_events_list %}
+	<div class="event grid_4">
+		<h2><a href="/events/{{event.id}}/">{{event.name}}</a></h2>
+		<p class="date">{{event.start_date}}</p>
+		<p class="venue">{{event.venue}}</p>
+	</div>
+	{% endfor %}
+	{% endif %}
+{% else %}
+<p>There are no upcoming events.</p>
+{% endif %}
+		
+{% endblock %}

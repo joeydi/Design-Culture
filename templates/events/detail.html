@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="grid_4">
+	<p>{{event.start_date}}</p>
+</div>
+<div class="grid_8 event">
+	<h2><a href="/events/{{event.id}}/">{{event.name}}</a></h2>
+	<p>{{event.start_date}}</p>
+	<p>{{event.description}}</p>
+	<p><a href="{{event.url}}">more info</a></p>
+</div>
+<div class="grid_4 venue">
+	<p class="name">{{event.venue.fs_name}}</p>
+	<p class="address">
+		{{event.venue.fs_address}}<br/>
+		{{event.venue.fs_city}}, {{event.venue.fs_state}} {{event.venue.fs_zip}}
+	</p>
+</div>
+		
+{% endblock %}

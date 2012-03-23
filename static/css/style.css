@@ -1,0 +1,60 @@
+body {
+	/* background: transparent url(/static/img/16_col.gif) repeat-y 50% 0; */
+	background: none;
+}
+
+#header {
+	margin: 40px 0;
+}
+
+#header #home-link {
+	font-family: 'League Gothic','Helvetica Neue',Arial,'Liberation Sans',FreeSans,sans-serif;
+	font-size: 36px;
+	line-height: 38px;
+	letter-spacing: 1px;
+	text-rendering: optimizeLegibility;
+	text-transform: uppercase;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+#header #nav {
+	list-style-type: none;
+}
+
+#body {}
+
+#body #content {}
+
+a {
+	text-decoration: none;
+	color: #92CB81;
+}
+
+a:visited {
+	color: #92CB81;
+}
+
+.events-grid .event {
+	height: 200px;
+	margin-bottom: 20px;
+	border-bottom: 1px solid #ccc;
+}
+
+.event h2 {
+	font-family: 'League Gothic','Helvetica Neue',Arial,'Liberation Sans',FreeSans,sans-serif;
+	font-size: 24px;
+	line-height: 22px;
+	letter-spacing: 1px;
+	text-rendering: optimizeLegibility;
+	text-transform: uppercase;
+}
+
+.event .date {
+
+}
+
+.event .venue {
+	color: #666;
+	font-style: italic;
+}

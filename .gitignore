@@ -1,0 +1,38 @@
+# Settings #
+############
+settings.py
+
+# Compiled source #
+###################
+*.pyc
+
+# Packages #
+############
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Logs and databases #
+######################
+*.log
+*.sql
+*.sqlite
+dump*
+
+# OS generated files #
+######################
+.DS_Store*
+ehthumbs.db
+Icon?
+Thumbs.db
+
+# Compass #
+.sass-cache/
+
+# Cache #
+.cache

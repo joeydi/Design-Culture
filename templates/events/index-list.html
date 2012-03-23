@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% if upcoming_events_list %}
+	{% regroup upcoming_events_list by start_date as date_list %}
+	{% for date in date_list %}
+	<div class="grid_12">
+		<div class="grid_4 alpha">
+			<p>{{date.grouper}}</p>
+		</div>
+		<div class="grid_8 omega">
+			{% for event in date.list %}
+			<div class="event">
+				<h2><a href="/events/{{event.id}}/">{{event.name}}</a></h2>
+				<p>{{event.start_date}}</p>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+	{% endfor %}
+{% else %}
+<p>There are no upcoming events.</p>
+{% endif %}
+		
+{% endblock %}
