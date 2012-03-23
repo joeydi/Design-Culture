@@ -1,41 +1,54 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<title>{% block title %}Design Culture{% endblock %}</title>
-		{% block head_scripts %}
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js" type="text/javascript" charset="utf-8"></script>
-		{% endblock %}
-		{% block head_links %}
-		<link rel="stylesheet" href="/static/css/reset.css" type="text/css" media="screen, projection" />
-		<link rel="stylesheet" href="/static/css/960.css" type="text/css" media="screen, projection" />
-		<link rel="stylesheet" href="/static/css/text.css" type="text/css" media="screen, projection" />
-		<link rel="stylesheet" href="/static/css/style.css" type="text/css" media="screen, projection" />
-		<!-- <link rel="stylesheet" href="http://kernest.com/fonts/league-gothic.css" type="text/css" media="screen, projection" /> -->
-		{% endblock %}
-	</head>
-	<body class="{% block bodyclass %}{% endblock %}">
-		<div id="header">
-			<div class="container_16">
-				<a id="home-link" class="grid_4" href="/events">Design<br/>Culture</a>
-				<ul id="nav" class="grid_12">
-					<li class="grid_2 alpha"><strong>Phoenix</strong></li>
-					<li class="grid_2">Events</li>
-					<li class="grid_2">Venues</li>
-					<li class="grid_2">Groups</li>
-					<li class="grid_2 omega">News</li>
-				</ul>
-				<div class="clear"></div>
-			</div>
-		</div>
-		<div id="body">
-			<div id="content" class="container_16 {% block contentclass %}{% endblock %}">
-		        {% block content %}{% endblock %}
-		    </div>
-		</div>
-		<div id="footer">
-			<div class="container_16"></div>
-		</div>
-	</body>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>{% block title %}Design Culture{% endblock %}</title>
+        {% block head_scripts %}
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="/static/js/bootstrap-transition.js"></script>
+        <!--[if lt IE 9]>
+            <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        {% endblock %}
+        {% block head_links %}
+        <link href="/static/css/bootstrap.css" rel="stylesheet">
+        <link href="/static/css/bootstrap-responsive.css" rel="stylesheet">
+        <link href="/static/css/style.css" rel="stylesheet">
+        {% endblock %}
+    </head>
+    <body class="{% block bodyclass %}{% endblock %}">
+        <div class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                    <a class="brand" href="#">Design Culture Phoenix</a>
+                    <div class="nav-collapse">
+                        <ul class="nav">
+                            <li class="active"><a href="#">Home</a></li>
+                            <li><a href="#about">Events</a></li>
+                            <li><a href="#contact">Venues</a></li>
+                            <li><a href="#contact">Calendar</a></li>
+                        </ul>
+                    </div><!--/.nav-collapse -->
+                </div>
+            </div>
+        </div>
+        <div id="header">
+            <div class="container">
+                <h1>Discover design events near you.</h1>
+            </div>
+        </div>
+            <div id="content" class="container_16 {% block contentclass %}{% endblock %}">
+                {% block content %}{% endblock %}
+            </div>
+        </div>
+        <div id="footer">
+            <div class="container_16"></div>
+        </div>
+    </body>
 </html>
