@@ -1,6 +1,8 @@
 from django.db import models
 from time import gmtime, strftime
 from events.utils import get_venue_info, get_fs_key
+from django.contrib.contenttypes import generic
+from generic_images.models import AttachedImage
 
 class Venue(models.Model):
     fs_id = models.CharField(max_length=100, blank=True)
@@ -52,6 +54,7 @@ class Event(models.Model):
     start_date = models.DateTimeField()
     end_date = models.DateTimeField()
     all_day = models.BooleanField()
+    images = generic.GenericRelation(AttachedImage)
     url = models.URLField(max_length=200)
     venue = models.ForeignKey(Venue, blank=True, null=True, on_delete=models.SET_NULL)
     organization = models.ForeignKey(Organization, blank=True, null=True, on_delete=models.SET_NULL)
@@ -59,3 +62,8 @@ class Event(models.Model):
     def __unicode__(self):
         #return self.start_date.strftime("The date is %A (%a) %d/%m/%Y")
         return self.name
+
+    def url_domain(self):
+        return self.url.split('//')[1].split('/')[0]
+
+

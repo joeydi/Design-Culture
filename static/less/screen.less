@@ -2,22 +2,76 @@
 @import "bootstrap/responsive.less";
 
 body {
-    /* background: transparent url(/static/img/16_col.gif) repeat-y 50% 0; */
-    background: none;
+    background: #fafafa;
     text-rendering: optimizeLegibility;
 }
 
+body, p {
+    font-family: "proxima-nova";
+}
+
+p {
+    margin-bottom: 1em;
+}
+
 #header {
-    margin: 40px 0 60px 0;
-    background: #eee;
-    border-bottom: 1px solid #ddd;
-    
+    background: #444 url(http://subtlepatterns.com/patterns/classy_fabric.png);
+    background: #444 url(http://subtlepatterns.com/patterns/irongrip.png);
+    background: #444 url(http://subtlepatterns.com/patterns/concrete_wall.png);
+    /* background: #444 url(http://subtlepatterns.com/patterns/black-Linen.png); */
+    margin-top: 40px;
+
     .container {
-        padding: 40px;
+        padding: 40px 0;
+    }
+    
+    h1 {
+        color: #efefef;
+        font-size: 60px;
+        line-height: 1em;
+        margin-bottom: 0.5em;
+    }
+    
+    .back {
+        font-size: 14px;
+        font-weight: bold;
+        color: @grayLight;
+        text-transform: uppercase;
+    }
+    
+    .span4 {
+        background: rgba(0,0,0,0.10);
+        /* border: 1px solid rgba(0,0,0,0.20); */
+        border-radius: 4px;
+        box-shadow: 0 0 4px rgba(0,0,0,0.50);
+        padding: 7px;
         
-        h1 {
-            font-size: 48px;
+        img {
+            display: block;
+            margin: 0;
         }
+    }
+}
+
+#content {
+    background: #efefef;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ccc;
+    padding: 40px 0;
+}
+
+/* Event Details */
+.venue {
+    img {
+        max-width: 100%;
+        margin-bottom: 1em;
+    }
+    .name {
+        font-size: 18px;
+        font-weight: bold;
+    }
+    .address {
+        color: @grayLight;
     }
 }
 
@@ -26,12 +80,78 @@ a, a:visited, a:hover {
     color: #92CB81;
 }
 
-.events .caption {
-    padding: 1em 0.5em;
+a.btn {
+    color: #333;
+    font-weight: 600;
+}
+
+a.btn-inverse {
+    color: #fff;
+}
+
+.thumbnail {
+    background: #fff;
+}
+
+.event-details #content .container {
+    padding: 20px;
+    background: #fff;
+}
+
+.events {
+    .caption {
+        padding: 1em 0.5em 0;
+        
+        i {
+            opacity: 0.65;
+        }
+    }
 }
 
 .events .caption h2 {
     font-size: 18px;
     line-height: 1em;
     margin-bottom: 0.5em;
+}
+
+#footer {
+    padding: 40px 0;
+    
+    a {
+        color: @gray;
+    }
+    
+    .row > div {
+        padding-top: 1em;
+        border-top: 3px solid @grayLight;
+    }
+}
+
+@media (max-width: 979px) {
+    .navbar-fixed-top {
+        position: static;
+        margin-bottom: 0;
+    }
+    #header {
+        margin-top: 0;
+    }
+}
+@media (max-width: 767px) {
+    #header {
+        text-align: center;
+        
+        .span4 {
+            display: none;
+        }
+        
+        h1 {
+            font-size: 40px;
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+    #header h1 {
+        font-size: 72px;
+    }
 }

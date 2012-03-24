@@ -140,7 +140,7 @@ textarea {
 body {
   margin: 0;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 13px;
+  font-size: 14px;
   line-height: 18px;
   color: #333333;
   background-color: #ffffff;
@@ -552,11 +552,11 @@ a:hover {
 p {
   margin: 0 0 9px;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 13px;
+  font-size: 14px;
   line-height: 18px;
 }
 p small {
-  font-size: 11px;
+  font-size: 12px;
   color: #999999;
 }
 .lead {
@@ -761,7 +761,7 @@ pre {
   padding: 0 3px 2px;
   font-family: Menlo, Monaco, "Courier New", monospace;
   font-family: Menlo, Monaco, "Courier New", monospace;
-  font-size: 12px;
+  font-size: 13px;
   color: #333333;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
@@ -780,7 +780,7 @@ pre {
   display: block;
   padding: 8.5px;
   margin: 0 0 9px;
-  font-size: 12.025px;
+  font-size: 12.950000000000001px;
   line-height: 18px;
   background-color: #f5f5f5;
   border: 1px solid #ccc;
@@ -822,7 +822,7 @@ legend {
   width: 100%;
   padding: 0;
   margin-bottom: 27px;
-  font-size: 19.5px;
+  font-size: 21px;
   line-height: 36px;
   color: #333333;
   border: 0;
@@ -837,10 +837,10 @@ input,
 button,
 select,
 textarea {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: normal;
   line-height: 18px;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: normal;
   line-height: 18px;
 }
@@ -864,7 +864,7 @@ select,
   height: 18px;
   padding: 4px;
   margin-bottom: 9px;
-  font-size: 13px;
+  font-size: 14px;
   line-height: 18px;
   color: #555555;
   border: 1px solid #cccccc;
@@ -2572,7 +2572,7 @@ table .span24 {
   *zoom: 1;
   padding: 4px 10px 4px;
   margin-bottom: 0;
-  font-size: 13px;
+  font-size: 14px;
   line-height: 18px;
   color: #333333;
   text-align: center;
@@ -2763,7 +2763,7 @@ table .span24 {
 }
 .btn-large {
   padding: 9px 14px;
-  font-size: 15px;
+  font-size: 16px;
   line-height: normal;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -2777,7 +2777,7 @@ table .span24 {
 }
 .btn-small {
   padding: 5px 9px;
-  font-size: 11px;
+  font-size: 12px;
   line-height: 16px;
 }
 .btn-small [class^="icon-"] {
@@ -2785,7 +2785,7 @@ table .span24 {
 }
 .btn-mini {
   padding: 2px 6px;
-  font-size: 11px;
+  font-size: 12px;
   line-height: 14px;
 }
 .btn-primary,
@@ -5189,7 +5189,7 @@ a.thumbnail:hover {
 }
 .label {
   padding: 1px 4px 2px;
-  font-size: 10.998px;
+  font-size: 11.844px;
   font-weight: bold;
   line-height: 13px;
   color: #ffffff;
@@ -5240,7 +5240,7 @@ a.thumbnail:hover {
 }
 .badge {
   padding: 1px 9px 2px;
-  font-size: 12.025px;
+  font-size: 12.950000000000001px;
   font-weight: bold;
   white-space: nowrap;
   color: #ffffff;
@@ -6920,21 +6920,68 @@ a.thumbnail:hover {
   }
 }
 body {
-  /* background: transparent url(/static/img/16_col.gif) repeat-y 50% 0; */
-
-  background: none;
+  background: #fafafa;
   text-rendering: optimizeLegibility;
 }
+body,
+p {
+  font-family: "proxima-nova";
+}
+p {
+  margin-bottom: 1em;
+}
 #header {
-  margin: 40px 0 60px 0;
-  background: #eee;
-  border-bottom: 1px solid #ddd;
+  background: #444444 url(http://subtlepatterns.com/patterns/classy_fabric.png);
+  background: #444444 url(http://subtlepatterns.com/patterns/irongrip.png);
+  background: #444444 url(http://subtlepatterns.com/patterns/concrete_wall.png);
+  /* background: #444 url(http://subtlepatterns.com/patterns/black-Linen.png); */
+
+  margin-top: 40px;
 }
 #header .container {
-  padding: 40px;
+  padding: 40px 0;
 }
-#header .container h1 {
-  font-size: 48px;
+#header h1 {
+  color: #efefef;
+  font-size: 60px;
+  line-height: 1em;
+  margin-bottom: 0.5em;
+}
+#header .back {
+  font-size: 14px;
+  font-weight: bold;
+  color: #999999;
+  text-transform: uppercase;
+}
+#header .span4 {
+  background: rgba(0, 0, 0, 0.1);
+  /* border: 1px solid rgba(0,0,0,0.20); */
+
+  border-radius: 4px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+  padding: 7px;
+}
+#header .span4 img {
+  display: block;
+  margin: 0;
+}
+#content {
+  background: #efefef;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ccc;
+  padding: 40px 0;
+}
+/* Event Details */
+.venue img {
+  max-width: 100%;
+  margin-bottom: 1em;
+}
+.venue .name {
+  font-size: 18px;
+  font-weight: bold;
+}
+.venue .address {
+  color: #999999;
 }
 a,
 a:visited,
@@ -6942,11 +6989,63 @@ a:hover {
   text-decoration: none;
   color: #92CB81;
 }
+a.btn {
+  color: #333;
+  font-weight: 600;
+}
+a.btn-inverse {
+  color: #fff;
+}
+.thumbnail {
+  background: #fff;
+}
+.event-details #content .container {
+  padding: 20px;
+  background: #fff;
+}
 .events .caption {
-  padding: 1em 0.5em;
+  padding: 1em 0.5em 0;
+}
+.events .caption i {
+  opacity: 0.65;
 }
 .events .caption h2 {
   font-size: 18px;
   line-height: 1em;
   margin-bottom: 0.5em;
+}
+#footer {
+  padding: 40px 0;
+}
+#footer a {
+  color: #555555;
+}
+#footer .row > div {
+  padding-top: 1em;
+  border-top: 3px solid #999999;
+}
+@media (max-width: 979px) {
+  .navbar-fixed-top {
+    position: static;
+    margin-bottom: 0;
+  }
+  #header {
+    margin-top: 0;
+  }
+}
+@media (max-width: 767px) {
+  #header {
+    text-align: center;
+  }
+  #header .span4 {
+    display: none;
+  }
+  #header h1 {
+    font-size: 40px;
+  }
+}
+@media (min-width: 1200px) {
+  #header h1 {
+    font-size: 72px;
+  }
 }

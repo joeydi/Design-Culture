@@ -1,22 +1,42 @@
 {% extends "base.html" %}
 
+{% block header %}<a class="back" href="/">&larr; back to index</a>{% endblock %}
+{% block bodyclass %}event-details{% endblock %}
 {% block content %}
 
-<div class="grid_4">
-	<p>{{event.start_date}}</p>
+<div class="row">
+    <div class="span12">
+        <h1 class="page-header"><a href="/events/{{event.id}}/">{{ event.name }}</a></h1>
+    </div>
+    <div class="span2">
+        <p>{{ event.start_date }}</p>
+    </div>
+    <div class="span6 event">
+        <ul class="thumbnails">
+            <li class="span6">
+                <a href="#" class="thumbnail"><img src="http://placehold.it/600x400" alt=""></a>
+            </li>
+            <li class="span2">
+                <a href="#" class="thumbnail"><img src="http://placehold.it/200x140" alt=""></a>
+            </li>
+            <li class="span2">
+                <a href="#" class="thumbnail"><img src="http://placehold.it/200x140" alt=""></a>
+            </li>
+            <li class="span2">
+                <a href="#" class="thumbnail"><img src="http://placehold.it/200x140" alt=""></a>
+            </li>
+        </ul>
+        <p>{{ event.description }}</p>
+        <p><a class="btn" href="{{event.url}}"><i class="icon-share-alt"></i> More info at {{ event.url_domain }}</a></p>
+    </div>
+    <div class="span4 venue">
+        <img src="https://maps-api-ssl.google.com/maps/api/staticmap?center={{ event.venue.fs_geolat }},{{ event.venue.fs_geolong }}&zoom=15&size=340x180&maptype=roadmap&sensor=false&scale=2" />
+        <p class="name">{{ event.venue.fs_name }}</p>
+        <p class="address">
+            {{ event.venue.fs_address }}<br/>
+            {{ event.venue.fs_city }}, {{ event.venue.fs_state }} {{ event.venue.fs_zip }}
+        </p>
+    </div>
 </div>
-<div class="grid_8 event">
-	<h2><a href="/events/{{event.id}}/">{{event.name}}</a></h2>
-	<p>{{event.start_date}}</p>
-	<p>{{event.description}}</p>
-	<p><a href="{{event.url}}">more info</a></p>
-</div>
-<div class="grid_4 venue">
-	<p class="name">{{event.venue.fs_name}}</p>
-	<p class="address">
-		{{event.venue.fs_address}}<br/>
-		{{event.venue.fs_city}}, {{event.venue.fs_state}} {{event.venue.fs_zip}}
-	</p>
-</div>
-		
+
 {% endblock %}

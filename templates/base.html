@@ -7,6 +7,8 @@
         {% block head_scripts %}
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="/static/js/bootstrap-transition.js"></script>
+        <script type="text/javascript" src="http://use.typekit.com/jrj1cya.js"></script>
+        <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
         <!--[if lt IE 9]>
             <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
@@ -24,13 +26,13 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </a>
-                    <a class="brand" href="#">Design Culture Phoenix</a>
+                    <a class="brand" href="/">Design Culture Phoenix</a>
                     <div class="nav-collapse">
                         <ul class="nav">
-                            <li class="active"><a href="#">Home</a></li>
-                            <li><a href="#about">Events</a></li>
-                            <li><a href="#contact">Venues</a></li>
-                            <li><a href="#contact">Calendar</a></li>
+                            <li class="active"><a href="/">Home</a></li>
+                            <li><a href="/events">Events</a></li>
+                            <li><a href="/venues">Venues</a></li>
+                            <li><a href="/calendar">Calendar</a></li>
                         </ul>
                     </div><!--/.nav-collapse -->
                 </div>
@@ -38,7 +40,14 @@
         </div>
         <div id="header">
             <div class="container">
+                {% block header %}
+                <div class="span4 venue" style="float: right;">
+                    <img src="https://maps-api-ssl.google.com/maps/api/staticmap?center=33.5041010,-112.0835030&amp;zoom=15&amp;size=340x180&amp;maptype=roadmap&amp;sensor=false&amp;scale=2">
+                </div>
                 <h1>Discover design events near you.</h1>
+                <a href="" class="btn btn-large btn-inverse"><i class="icon-flag icon-white"></i> Get Notifications</a>
+                <a href="" class="btn btn-large btn-inverse"><i class="icon-edit icon-white"></i> Submit an Event</a>
+                {% endblock %}
             </div>
         </div>
         <div id="content">
@@ -47,7 +56,36 @@
             </div>
         </div>
         <div id="footer">
-            <div class="container_16"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="span3">
+                        <h5>Groups</h5>
+                        <ul>
+                            <li><a href="http://arizona.aiga.org">AIGA Arizona</a></li>
+                            <li><a href="http://www.indesignusergroup.com/chapters/phoenix/">PHX Indesign Users Group</a></li>
+                        </ul>
+                    </div>
+                    <div class="span3">
+                        <h5>Friends</h5>
+                        <ul>
+                            <li><a href="http://eventification.com/">Eventification</a></li>
+                            <li><a href="http://blogs.phoenixnewtimes.com/jackalope/">Jackalope Ranch</a></li>
+                            <li><a href="http://www.thephoenixegotist.com/">The Phoenix Egotist</a></li>
+                        </ul>
+                    </div>
+                    <div class="span3">
+                        <h5>Projects</h5>
+                        <ul>
+                            <li><a href="http://12by30.com/">12by30</a></li>
+                            <li><a href="http://phxlayers.com">Phoenix Layers</a></li>
+                        </ul>
+                    </div>
+                    <div class="span3">
+                        <h5>Who</h5>
+                        <p>This site is brought to you by some people from the <a href="http://twitter.com/phxdc">Phoenix Design Community.</a></p>
+                    </div>
+                </div>
+            </div>
         </div>
     </body>
 </html>
