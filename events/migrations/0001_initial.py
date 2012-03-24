@@ -8,20 +8,6 @@ class Migration(SchemaMigration):
 
     def forwards(self, orm):
         
-        # Adding model 'Event'
-        db.create_table('events_event', (
-            ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
-            ('name', self.gf('django.db.models.fields.CharField')(max_length=200)),
-            ('description', self.gf('django.db.models.fields.TextField')()),
-            ('start_date', self.gf('django.db.models.fields.DateTimeField')()),
-            ('end_date', self.gf('django.db.models.fields.DateTimeField')()),
-            ('all_day', self.gf('django.db.models.fields.BooleanField')(default=False)),
-            ('url', self.gf('django.db.models.fields.URLField')(max_length=200)),
-            ('venue', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['events.Venue'])),
-            ('organization', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['events.Organization'])),
-        ))
-        db.send_create_signal('events', ['Event'])
-
         # Adding model 'Venue'
         db.create_table('events_venue', (
             ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
@@ -50,17 +36,30 @@ class Migration(SchemaMigration):
         ))
         db.send_create_signal('events', ['Organization'])
 
+        # Adding model 'Event'
+        db.create_table('events_event', (
+            ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
+            ('name', self.gf('django.db.models.fields.CharField')(max_length=200)),
+            ('description', self.gf('django.db.models.fields.TextField')()),
+            ('start_date', self.gf('django.db.models.fields.DateTimeField')()),
+            ('end_date', self.gf('django.db.models.fields.DateTimeField')()),
+            ('all_day', self.gf('django.db.models.fields.BooleanField')(default=False)),
+            ('url', self.gf('django.db.models.fields.URLField')(max_length=200)),
+            ('venue', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['events.Organization'], null=True, blank=True)),
+        ))
+        db.send_create_signal('events', ['Event'])
+
 
     def backwards(self, orm):
         
-        # Deleting model 'Event'
-        db.delete_table('events_event')
-
         # Deleting model 'Venue'
         db.delete_table('events_venue')
 
         # Deleting model 'Organization'
         db.delete_table('events_organization')
+
+        # Deleting model 'Event'
+        db.delete_table('events_event')
 
 
     models = {
@@ -71,10 +70,9 @@ class Migration(SchemaMigration):
             'end_date': ('django.db.models.fields.DateTimeField', [], {}),
             'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'name': ('django.db.models.fields.CharField', [], {'max_length': '200'}),
-            'organization': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['events.Organization']"}),
             'start_date': ('django.db.models.fields.DateTimeField', [], {}),
             'url': ('django.db.models.fields.URLField', [], {'max_length': '200'}),
-            'venue': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['events.Venue']"})
+            'venue': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['events.Organization']", 'null': 'True', 'blank': 'True'})
         },
         'events.organization': {
             'Meta': {'object_name': 'Organization'},
