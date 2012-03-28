@@ -31,7 +31,10 @@
     </div>
     <div class="span4 venue">
         <img src="https://maps-api-ssl.google.com/maps/api/staticmap?center={{ event.venue.fs_geolat }},{{ event.venue.fs_geolong }}&zoom=15&size=340x180&maptype=roadmap&sensor=false&scale=2" />
-        <p class="name">{{ event.venue.fs_name }}</p>
+        <p class="name">
+            <a href="" class="btn btn-mini">Venue Details &raquo;</a>
+            {{ event.venue.fs_name }}
+        </p>
         <p class="address">
             {{ event.venue.fs_address }}<br/>
             {{ event.venue.fs_city }}, {{ event.venue.fs_state }} {{ event.venue.fs_zip }}
