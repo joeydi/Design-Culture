@@ -6928,6 +6928,7 @@ p {
   font-family: "proxima-nova";
 }
 p {
+  font-size: 16px;
   margin-bottom: 1em;
 }
 #header {
@@ -6980,6 +6981,10 @@ p {
   font-size: 18px;
   font-weight: bold;
 }
+.venue .name .btn {
+  float: right;
+  margin-top: -2px;
+}
 .venue .address {
   color: #999999;
 }
@@ -7004,7 +7009,11 @@ a.btn-inverse {
   background: #fff;
 }
 .events .caption {
-  padding: 1em 0.5em 0;
+  padding: 1em 0.5em 0.5em;
+}
+.events .caption p {
+  font-size: 14px;
+  margin-bottom: 0;
 }
 .events .caption i {
   opacity: 0.65;
@@ -7034,6 +7043,15 @@ a.btn-inverse {
   }
 }
 @media (max-width: 767px) {
+  body {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  #header,
+  #content {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
   #header {
     text-align: center;
   }
