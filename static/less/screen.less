@@ -132,18 +132,30 @@ a.btn-inverse {
         position: static;
         margin-bottom: 0;
     }
+
     #header {
         margin-top: 0;
     }
 }
 @media (max-width: 767px) {
+    body {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    #header,
+    #content {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
     #header {
         text-align: center;
-        
+
         .span4 {
             display: none;
         }
-        
+
         h1 {
             font-size: 40px;
         }
